@@ -1,5 +1,6 @@
 checks:
     php:
+        code_rating: true
         duplication: true
         unused_methods: false
         unused_parameters: true
