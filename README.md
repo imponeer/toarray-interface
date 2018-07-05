@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/github/license/imponeer/toarray-interface.svg?maxAge=2592000)](LICENSE)
-[![GitHub release](https://img.shields.io/github/release/imponeer/toarray-interface.svg?maxAge=2592000)](https://github.com/imponeer/toarray-interface/releases) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/imponeer/toarray-interface/badges/quality-score.png)](https://scrutinizer-ci.com/g/imponeer/toarray-interface/) [![PHP](https://img.shields.io/packagist/php-v/imponeer/toarray-interface.svg)](http://php.net) 
+[![GitHub release](https://img.shields.io/github/release/imponeer/toarray-interface.svg?maxAge=2592000)](https://github.com/imponeer/toarray-interface/releases) [![Maintainability](https://api.codeclimate.com/v1/badges/79f89e2fe21c0076c29a/maintainability)](https://codeclimate.com/github/imponeer/toarray-interface/maintainability) [![PHP](https://img.shields.io/packagist/php-v/imponeer/toarray-interface.svg)](http://php.net) 
 [![Packagist](https://img.shields.io/packagist/dm/imponeer/toarray-interface.svg)](https://packagist.org/packages/imponeer/toarray-interface)
 
 # ToArray Interface
