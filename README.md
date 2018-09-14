@@ -18,9 +18,11 @@ composer require imponeer/toarray-interface
 
 Otherwise you need to include manualy files from `src/` directory. 
 
+**Note:** if you need to use this library in PHP 5 project, you need use [1.0 version of this library](https://packagist.org/packages/imponeer/toarray-interface#1.0.0).
+
 ## Example
 
-```php5
+```php
 
 use Imponeer/ToArrayInterface;
 
