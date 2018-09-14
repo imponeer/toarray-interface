@@ -31,7 +31,7 @@ class DummyObject implements ToArrayInterface {
     *
     * @return array
     */
-   public function toArray() {
+   public function toArray(): array {
       return array(
       	'hash' => sha1(time())
       );
