@@ -11,9 +11,9 @@ jobs:
   update_wiki:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkouting main code
+      - name: Checkouting main code...
         uses: actions/checkout@v2
-      - name: Update wiki
+      - name: Updating Project Wiki...
         uses: impresscms-dev/phpdocs-wiki-update-action@master
         with:
           wiki_github_update_token: ${{secrets.WIKI_GITHUB_UPDATE_TOKEN}}
