@@ -14,7 +14,7 @@ jobs:
       - name: Checkouting main code...
         uses: actions/checkout@v2
       - name: Updating Project Wiki...
-        uses: impresscms-dev/phpdocs-wiki-update-action@master
+        uses: impresscms-dev/phpdocs-wiki-update-action@v1.0.0
         with:
           wiki_github_update_token: ${{secrets.WIKI_GITHUB_UPDATE_TOKEN}}
           wiki_github_update_user: ${{secrets.WIKI_GITHUB_UPDATE_USER}}
