@@ -3,7 +3,7 @@ name: Auto update project wiki
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - 'v*' # Initializes on any new tag
 
