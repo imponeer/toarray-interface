@@ -1,0 +1,17 @@
+name: Automatic releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 2'
+
+jobs:
+  auto-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Releasing if there is something new...
+        uses: impresscms-dev/simple-autorelease-action@v0.1
+        with:
+          release_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: patch
