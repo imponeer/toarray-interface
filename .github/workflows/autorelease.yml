@@ -3,7 +3,7 @@ name: Automatic releases
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * 2'
+    - cron: '5 4 * */5 0'
 
 jobs:
   auto-release:
