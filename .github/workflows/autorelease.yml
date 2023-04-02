@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Releasing if there is something new...
-        uses: impresscms-dev/simple-autorelease-action@v0.1
+        uses: impresscms-dev/simple-autorelease-action@v0.2
         with:
           release_branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
