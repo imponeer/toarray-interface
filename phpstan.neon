@@ -1,0 +1,10 @@
+parameters:
+    level: 8
+    paths:
+        - src
+
+    # Ignore tests directory for now
+    excludePaths:
+        - vendor/*
+
+    reportUnmatchedIgnoredErrors: false

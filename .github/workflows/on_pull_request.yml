@@ -29,6 +29,10 @@ jobs:
           tools: composer:v${{ matrix.composer }}
       - name: Composer validate
         run: composer validate --strict --no-check-lock
+      - name: Run phpcs
+        run: composer phpcs
+      - name: Run phpstan
+        run: composer phpstan
       - name: Install Composer dependencies (with dev)
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
       - name: Install Composer dependencies (without dev)
