@@ -10,18 +10,6 @@
 
     <!-- Include the PSR-12 standard -->
     <rule ref="PSR12">
-        <exclude name="PSR1.Methods.CamelCapsMethodName"/>
     </rule>
 
-    <!-- Additional rules -->
-    <rule ref="Generic.PHP.DisallowShortOpenTag">
-        <exclude-pattern>*.php</exclude-pattern>
-    </rule>
-
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="120"/>
-            <property name="absoluteLineLimit" value="0"/>
-        </properties>
-    </rule>
 </ruleset>
