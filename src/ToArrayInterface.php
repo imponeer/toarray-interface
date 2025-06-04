@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Imponeer;
@@ -8,10 +9,10 @@ namespace Imponeer;
  */
 interface ToArrayInterface
 {
-	/**
-	 * Converts object to array
-	 *
-	 * @return array
-	 */
-	public function toArray(): array;
+    /**
+     * Converts object to array
+     *
+     * @return array
+     */
+    public function toArray(): array;
 }
