@@ -1,24 +1,40 @@
 {
-	"name": "imponeer/toarray-interface",
-	"description": "PHP library that provides toArray interface, that could be used everywhere where you need to convert object into array and make sure that to that toArray function is because of same interface",
-	"type": "library",
-	"license": "MIT",
-	"keywords": [
-		"toArray",
-		"interface"
-	],
-	"authors": [
-		{
-			"name": "Raimondas Rimkevičius",
-			"email": "github@mekdrop.name"
-		}
-	],
-	"autoload": {
-		"psr-4": {
-			"Imponeer\\": "src/"
-		}
-	},
-	"require": {
-		"php": ">=7.0"
-	}
+    "name": "imponeer/toarray-interface",
+    "description": "A PHP interface defining a standard method for converting objects to arrays. Ensures consistent method naming and return type for array conversion across different classes.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "toarray",
+        "interface",
+        "contract",
+        "array-conversion",
+        "object-conversion",
+        "serializable",
+        "arrayable",
+        "php-interface"
+    ],
+    "homepage": "https://github.com/imponeer/toarray-interface",
+    "support": {
+        "issues": "https://github.com/imponeer/toarray-interface/issues",
+        "source": "https://github.com/imponeer/toarray-interface"
+    },
+    "authors": [
+        {
+            "name": "Raimondas Rimkevičius",
+            "email": "github@mekdrop.name",
+            "homepage": "https://mekdrop.name",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imponeer\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
 }

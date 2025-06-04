@@ -13,25 +13,18 @@ jobs:
       max-parallel: 3
       matrix:
         php:
-          - 7.2
-          - 7.3
-          - 7.4
-          - 8.0
-          - 8.1
-          - 8.2
           - 8.3
-        composer: 
-          - 2  
+          - 8.4
+        composer:
+          - 2
     name: Test - php:${{ matrix.php }}; composer:${{ matrix.composer }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install PHP
-        uses: shivammathur/setup-php@master
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: curl, gd, pdo_mysql, json, mbstring, pcre, session
-          ini-values: post_max_size=256M
           coverage: none
           tools: composer:v${{ matrix.composer }}
       - name: Composer validate
@@ -71,4 +64,4 @@ jobs:
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
