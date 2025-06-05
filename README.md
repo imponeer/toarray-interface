@@ -54,6 +54,21 @@ if ($instance instanceof ToArrayInterface) {
 
 This repository features an automatically updated [GitHub Wiki](https://github.com/imponeer/toarray-interface/wiki) containing up-to-date code documentation generated from the source. You can use the Wiki to explore interfaces, methods, and other technical details about the project.
 
+## Alternatives
+
+Because PHP does not yet have a standard way to convert objects to arrays, many alternative libraries exist, each trying to solve the same problem in its own way. Depending on your specific needs - such as recursion support, fluent APIs, strict interface contracts, or framework integration - you may find one of these packages better suited for your project.
+
+Below is a curated list of popular alternatives, showcasing different approaches to object-to-array conversion in PHP:
+
+| Package                                                                                           | PHP Version | Features                                             | 
+| ------------------------------------------------------------------------------------------------- | ----------- | ---------------------------------------------------- | 
+| [inspirum/arrayable](https://github.com/inspirum/arrayable-php)                                 | [![PHP](https://img.shields.io/packagist/dependency-v/inspirum/arrayable/php)](http://php.net)        | Recursive conversion, helper functions, base classes | 
+| [dmytrof/array-convertible](https://github.com/dmytrof/ArrayConvertible)           | [![PHP](https://img.shields.io/packagist/dependency-v/dmytrof/array-convertible/php)](http://php.net)        | Lightweight, nested conversion, simple interface     | 
+| [rexlabsio/array-object-php](https://github.com/rexlabsio/array-object-php)                     | [![PHP](https://img.shields.io/packagist/dependency-v/rexlabs/array-object/php)](http://php.net)        | Fluent interface, `toArray()` and `toJson()` methods | 
+| [php-extended/php-arrayable-interface](https://gitlab.com/php-extended/php-arrayable-interface) | [![PHP](https://img.shields.io/packagist/dependency-v/php-extended/php-arrayable-interface/php)](http://php.net)        | Interface-only, strict contract definition           |
+
+Missing an alternative? Submit a [pull request](https://github.com/imponeer/toarray-interface/compare) to get it added.
+
 ## Development
 
 To maintain code quality, this project uses:
