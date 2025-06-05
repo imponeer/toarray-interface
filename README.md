@@ -50,6 +50,10 @@ if ($instance instanceof ToArrayInterface) {
 }
 ```
 
+## Documentation
+
+This repository features an automatically updated [GitHub Wiki](https://github.com/imponeer/toarray-interface/wiki) containing up-to-date code documentation generated from the source. You can use the Wiki to explore interfaces, methods, and other technical details about the project.
+
 ## Development
 
 To maintain code quality, this project uses:
