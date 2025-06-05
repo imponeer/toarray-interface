@@ -66,6 +66,7 @@ Below is a curated list of popular alternatives, showcasing different approaches
 | [dmytrof/array-convertible](https://github.com/dmytrof/ArrayConvertible)           | [![PHP](https://img.shields.io/packagist/dependency-v/dmytrof/array-convertible/php)](http://php.net)        | Lightweight, nested conversion, simple interface     | 
 | [rexlabsio/array-object-php](https://github.com/rexlabsio/array-object-php)                     | [![PHP](https://img.shields.io/packagist/dependency-v/rexlabs/array-object/php)](http://php.net)        | Fluent interface, `toArray()` and `toJson()` methods | 
 | [php-extended/php-arrayable-interface](https://gitlab.com/php-extended/php-arrayable-interface) | [![PHP](https://img.shields.io/packagist/dependency-v/php-extended/php-arrayable-interface/php)](http://php.net)        | Interface-only, strict contract definition           |
+| [illuminate/contracts](https://github.com/illuminate/contracts) | [![PHP](https://img.shields.io/packagist/dependency-v/illuminate/contracts/php)](http://php.net) | Defines a generic `Arrayable` interface usable with or without Laravel |
 
 Missing an alternative? Submit a [pull request](https://github.com/imponeer/toarray-interface/compare) to get it added.
 
