@@ -1,55 +1,87 @@
 [![License](https://img.shields.io/github/license/imponeer/toarray-interface.svg?maxAge=2592000)](LICENSE)
-[![GitHub release](https://img.shields.io/github/release/imponeer/toarray-interface.svg?maxAge=2592000)](https://github.com/imponeer/toarray-interface/releases) [![Maintainability](https://api.codeclimate.com/v1/badges/79f89e2fe21c0076c29a/maintainability)](https://codeclimate.com/github/imponeer/toarray-interface/maintainability) [![PHP](https://img.shields.io/packagist/php-v/imponeer/toarray-interface.svg)](http://php.net) 
+[![GitHub release](https://img.shields.io/github/release/imponeer/toarray-interface.svg?maxAge=2592000)](https://github.com/imponeer/toarray-interface/releases) [![PHP](https://img.shields.io/packagist/php-v/imponeer/toarray-interface.svg)](http://php.net)
 [![Packagist](https://img.shields.io/packagist/dm/imponeer/toarray-interface.svg)](https://packagist.org/packages/imponeer/toarray-interface)
 
 # ToArray Interface
 
-Some long time ago there were [RFC about adding __toArray method into PHP](https://wiki.php.net/rfc/object_cast_to_types). Sadly, this was rejected. [PHP-FIG](https://www.php-fig.org/psr/) doesn't have yet any project about that. And that's why today we have many classes in different frameworks that has toArray method. There are some composer packages that has toArray interface like [illuminate/contracts](https://packagist.org/packages/illuminate/contracts). However these packages are not very good choice if you need only one file with interface from there. In that case they have many things that you do not need. So, that's why we have created small composer library that could be used for such cases.
+There have been several attempts to introduce a standard `toArray` method or interface in PHP:
 
-So, basically this library is only for one thing - it gives interface that could be used when you need to know if object has possibility to be converted to array with `toArray` method.
+- The first attempt was in 2012, when an [RFC proposed adding several magic methods to PHP, including `__toArray`, `__toInt()`, `__toFloat()`, `__toScalar()`, and `__toBool()`](https://wiki.php.net/rfc/object_cast_to_types). This proposal failed before reaching the voting stage due to concerns about implementation details and lack of consensus.
+- In 2019, a separate [RFC specifically focused on introducing only a `__toArray` method for objects](https://wiki.php.net/rfc/to-array). Unlike the broader 2012 proposal, this RFC aimed to standardize array conversion alone, but it also failed before reaching the voting stage due to lack of support and unresolved concerns—particularly that the `__toArray` method did not specify what kind of array should be returned (e.g., associative or indexed), nor whether nested arrays or objects were allowed as values. One of the main unresolved questions was how to specify or standardize the format of the returned array in a way that would suit all use cases.
+- Over the years, various frameworks and libraries (such as [Laravel's illuminate/contracts](https://packagist.org/packages/illuminate/contracts)) have introduced their own `toArray` conventions, but these are not universal and often come with additional dependencies.
+- As of now, neither PHP itself nor the PHP-FIG group has adopted an official standard for object-to-array conversion.
+
+This package was created to address this gap: it provides a minimal Composer package containing only the `ToArrayInterface`. Use it when you need to ensure an object can be converted to an array via a `toArray` method, without introducing unnecessary dependencies.
 
 ## Installation
 
-To install and use this package, we recommend to use [Composer](https://getcomposer.org):
+To install and use this package, use [Composer](https://getcomposer.org):
 
 ```bash
 composer require imponeer/toarray-interface
 ```
 
-Otherwise you need to include manualy files from `src/` directory. 
+Alternatively, manually include the files from the `src/` directory.
 
-**Note:** if you need to use this library in PHP 5 project, you need use [1.0 version of this library](https://packagist.org/packages/imponeer/toarray-interface#1.0.0).
+**Note:** For PHP 5 projects, use [version 1.0 of this library](https://packagist.org/packages/imponeer/toarray-interface#1.0.0).
 
 ## Example
 
 ```php
-
-use Imponeer/ToArrayInterface;
+use Imponeer\ToArrayInterface;
 
 class DummyObject implements ToArrayInterface {
 
-   /**
-    * Converts object to array
-    *
-    * @return array
-    */
-   public function toArray(): array {
-      return array(
-      	'hash' => sha1(time())
-      );
-   }
-
+    /**
+     * Converts object to array
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(): array {
+        return [
+            'hash' => sha1(time()),
+        ];
+    }
 }
 
 $instance = new DummyObject();
 if ($instance instanceof ToArrayInterface) {
-	var_dump($instance->toArray());
+    var_dump($instance->toArray());
 }
-
 ```
+
+## Development
+
+To maintain code quality, this project uses:
+
+- [PHP_CodeSniffer (phpcs)](https://github.com/squizlabs/PHP_CodeSniffer) for coding standards.
+- [PHPStan](https://phpstan.org/) for static analysis.
+
+### Running PHPCS
+
+Run the following command to check code style:
+
+```bash
+vendor/bin/phpcs
+```
+
+### Running PHPStan
+
+Run the following command to perform static analysis:
+
+```bash
+vendor/bin/phpstan analyse
+```
+
+Refer to `phpcs.xml` and `phpstan.neon` for configuration details.
 
 ## How to contribute?
 
-If you want to add some functionality or fix bugs, you can fork, change and create pull request. If you not sure how this works, try [interactive GitHub tutorial](https://skills.github.com).
+Contributions are welcome! To contribute:
 
-If you found any bug or have some questions, use [issues tab](https://github.com/imponeer/toarray-interface/issues) and write there your questions.
+1. Fork this repository on GitHub.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and commit them with clear messages.
+4. Push your branch to your fork and open a Pull Request.
+
+If you find a bug or have a question, please use the [issues tab](https://github.com/imponeer/toarray-interface/issues).
